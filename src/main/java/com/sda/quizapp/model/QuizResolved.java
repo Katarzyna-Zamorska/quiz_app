@@ -14,15 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "quiz_resolved")
-public class QuizResolved extends BaseEntity {
+public class QuizResolved extends TimestampedEntity {
 
     @CreationTimestamp
-    @JsonFormat(pattern = "dd-MM-yyy@HH:mm")
-    @NotNull
-    private LocalDateTime start;
-
-    @CreationTimestamp
-    @JsonFormat(pattern = "dd-MM-yyy@HH:mm")
+    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm")
     @NotNull
     private LocalDateTime finished;
 

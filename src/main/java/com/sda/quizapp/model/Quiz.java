@@ -15,7 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "list_of_quizzes")
-public class Quiz extends BaseEntity {
+public class Quiz extends TimestampedEntity {
 
     private String title;
     private String description;
@@ -25,15 +25,9 @@ public class Quiz extends BaseEntity {
     @Column(name = "correct_answer")
     private String correctAnswer;
 
-    @Column(name = "creation_date")
-    @CreationTimestamp
-    @JsonFormat(pattern = "dd-MM-yyy@HH:mm")
-    @NotNull
-    private LocalDateTime creationDateTime;
-
     @Column(name = "expiration_date")
     @CreationTimestamp
-    @JsonFormat(pattern = "dd-MM-yyy@HH:mm")
+    @JsonFormat(pattern = "dd-MM-yyyy@HH:mm")
     @NotNull
     private LocalDateTime expirationDateTime;
 

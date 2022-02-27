@@ -1,14 +1,14 @@
 package com.sda.quizapp.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
@@ -17,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "list_of_users")
-public class User extends BaseEntity {
+public class User extends TimestampedEntity {
 
     @NotNull
     @NotBlank(message = "Login is mandatory")
@@ -31,11 +31,6 @@ public class User extends BaseEntity {
 
     @Embedded
     private Person person;
-
-    @Column(name = "create_date_time")
-    @CreationTimestamp
-    @JsonFormat(pattern = "dd-MM-yyy@HH:mm")
-    private LocalDateTime createDateTime;
 
     @OneToMany(mappedBy = "creator")
     @ToString.Exclude
