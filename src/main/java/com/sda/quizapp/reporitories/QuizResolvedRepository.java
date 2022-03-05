@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface QuizResolvedRepository extends JpaRepository<QuizResolved, Long> {
 
-    List<QuizResolved> findByPerson_LastnameOrPerson_Email(String text);
+    List<QuizResolved> findByPerson_LastnameOrPerson_Email(String text, String contents);
 
 }

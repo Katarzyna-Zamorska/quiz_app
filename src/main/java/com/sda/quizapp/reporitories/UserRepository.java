@@ -1,12 +1,9 @@
 package com.sda.quizapp.reporitories;
 
+import com.sda.quizapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Set;
-
 @Repository
-public interface User extends JpaRepository<User, Long> {
-
-
+public interface UserRepository extends JpaRepository <User, Long> {
 }

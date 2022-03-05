@@ -11,6 +11,7 @@ import java.util.Set;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "list_of_quiz_question")
 public class QuizQuestion extends BaseEntity {
 

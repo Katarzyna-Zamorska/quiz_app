@@ -14,6 +14,7 @@ import java.util.Set;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "list_of_quizzes")
 public class Quiz extends TimestampedEntity {
 
